@@ -1,0 +1,11 @@
+# Compilar
+make
+
+# Ejecutar
+./programa
+
+# Limpiar y recompilar
+make clean && make
+
+# Ver qué archivos tienes
+ls -la
