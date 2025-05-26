@@ -63,6 +63,7 @@ void mostrarMenuPrincipal(SistemaAutenticacion& auth) {
             case 1:
                 std::cout << "\n--- ÁREA DE USUARIO ---\n";
                 std::cout << "Aquí va la funcionalidad para usuarios...\n";
+        //TODO:: Cambiar a la funcion (Aun por hacer) ver aptos / reservar.
                 break;
 
             case 2:
@@ -70,6 +71,7 @@ void mostrarMenuPrincipal(SistemaAutenticacion& auth) {
                     std::cout << "\n--- PANEL DE ADMINISTRACIÓN ---\n";
                     auth.mostrarUsuarios();
                     std::cout << "Aquí va la funcionalidad para administradores...\n";
+          // TODO:: Cambiar a la funcion (por hacer) Administrar aptos (SOlo para admins)
                 } else {
                     std::cout << "Opción no válida.\n";
                 }
