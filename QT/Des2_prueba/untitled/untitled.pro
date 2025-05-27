@@ -5,9 +5,11 @@ CONFIG -= qt
 
 SOURCES += \
         main.cpp \
+        pagosusuario.cpp \
         reservas.cpp \
         sistemaautenticacion.cpp
 
 HEADERS += \
+    pagosusuario.h \
     reservas.h \
     sistemaautenticacion.h
