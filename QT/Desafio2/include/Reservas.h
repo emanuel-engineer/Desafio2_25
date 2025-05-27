@@ -5,7 +5,8 @@
 #include <string>
 #include <iostream>
 #include <fstream>
-
+#include <iomanip> //Para setw y setfill
+#include <sstream> //Formato de ID
 
 class apartamento {
 public:
