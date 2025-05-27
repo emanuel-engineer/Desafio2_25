@@ -1,11 +1,14 @@
 #include <iostream>
-#include "SistemaAutenticacion.h"
+#include "sistemaautenticacion.h"
+#include "reservas.h"
+using namespace std;
 
 // Función para mostrar menú principal
 void mostrarMenuPrincipal(SistemaAutenticacion& auth);
 
 int main() {
     SistemaAutenticacion auth("usuarios.txt");
+
 
     // Crear usuarios por defecto si es necesario
     auth.crearUsuariosPorDefecto();
@@ -60,34 +63,35 @@ void mostrarMenuPrincipal(SistemaAutenticacion& auth) {
         std::cin >> opcion;
 
         switch (opcion) {
-            case 1:
-                std::cout << "\n--- ÁREA DE USUARIO ---\n";
-                std::cout << "Aquí va la funcionalidad para usuarios...\n";
-        //TODO:: Cambiar a la funcion (Aun por hacer) ver aptos / reservar.
-                break;
+        case 1:
+            std::cout << "\n--- ÁREA DE USUARIO ---\n";
+            std::cout << "Aquí va la funcionalidad para usuarios...\n";
+            //TODO:: Cambiar a la funcion (Aun por hacer) ver aptos / reservar.
+            break;
 
-            case 2:
-                if (auth.esAdministrador()) {
-                    std::cout << "\n--- PANEL DE ADMINISTRACIÓN ---\n";
-                    auth.mostrarUsuarios();
-                    std::cout << "Aquí va la funcionalidad para administradores...\n";
-          // TODO:: Cambiar a la funcion (por hacer) Administrar aptos (SOlo para admins)
-                } else {
-                    std::cout << "Opción no válida.\n";
-                }
-                break;
+        case 2:
+            if (auth.esAdministrador()) {
+                std::cout << "\n--- PANEL DE ADMINISTRACIÓN ---\n";
 
-            case 3:
-                auth.cerrarSesion();
-                return;
-
-            case 4:
-                std::cout << "¡Hasta luego!\n";
-                exit(0);
-
-            default:
+                std::string IDform = generarNuevoID();
+                cout << IDform << endl;
+                    // TODO:: Cambiar a la funcion (por hacer) Administrar aptos (SOlo para admins)
+            } else {
                 std::cout << "Opción no válida.\n";
-                break;
+            }
+            break;
+
+        case 3:
+            auth.cerrarSesion();
+            return;
+
+        case 4:
+            std::cout << "¡Hasta luego!\n";
+            exit(0);
+
+        default:
+            std::cout << "Opción no válida.\n";
+            break;
         }
     }
 }

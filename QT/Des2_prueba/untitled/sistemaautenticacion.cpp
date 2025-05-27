@@ -1,5 +1,4 @@
-// ==================== SistemaAutenticacion.cpp ====================
-#include "SistemaAutenticacion.h"
+#include "sistemaautenticacion.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -34,7 +33,7 @@ bool SistemaAutenticacion::cargarUsuarios() {
             std::getline(iss, tipoStr)) {
 
             TipoUsuario tipo = (tipoStr == "admin") ?
-                TipoUsuario::ADMINISTRADOR : TipoUsuario::USUARIO;
+                                   TipoUsuario::ADMINISTRADOR : TipoUsuario::USUARIO;
 
             usuarios.emplace_back(nombre, password, tipo);
         }
@@ -146,7 +145,7 @@ void SistemaAutenticacion::mostrarUsuarios() const {
     for (const auto& user : usuarios) {
         std::cout << "Usuario: " << user.nombre;
         std::cout << " | Tipo: " << (user.tipo == TipoUsuario::ADMINISTRADOR ?
-                                    "Administrador" : "Usuario") << "\n";
+                                         "Administrador" : "Usuario") << "\n";
     }
     std::cout << "========================\n";
 }

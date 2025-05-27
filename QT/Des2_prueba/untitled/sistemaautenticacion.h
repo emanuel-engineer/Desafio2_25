@@ -1,9 +1,10 @@
 // ==================== SistemaAutenticacion.h ====================
-#ifndef SISTEMA_AUTENTICACION_H
-#define SISTEMA_AUTENTICACION_H
+#ifndef SISTEMAAUTENTICACION_H
+#define SISTEMAAUTENTICACION_H
 
 #include <string>
 #include <vector>
+
 
 enum class TipoUsuario {
     USUARIO,
