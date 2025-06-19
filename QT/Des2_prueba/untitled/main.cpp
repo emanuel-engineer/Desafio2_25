@@ -150,8 +150,10 @@ void menuAdministrador(SistemaAutenticacion& auth) {
         std::cout << "3. Modificar apartamento\n";
         std::cout << "4. Ver todos los apartamentos\n";
         std::cout << "5. Ver reservas\n";
-        std::cout << "6. Gestionar usuarios\n";
+        std::cout << "6. Agregar usuarios\n";
+        std::cout << "7. Ver usuarios\n";
         std::cout << "0. Volver al menú principal\n";
+
         std::cout << "Selecciona una opción: ";
         std::cin >> opcionAdmin;
 
@@ -228,9 +230,32 @@ void menuAdministrador(SistemaAutenticacion& auth) {
             std::cout << "\n--- RESERVAS ACTUALES ---\n";
             reservas.mostrarReservas();
             break;
-        case 6:
+        case 6:{
             std::cout << "\n--- GESTIÓN DE USUARIOS ---\n";
-            auth.mostrarUsuarios();
+
+
+
+
+            std::cout << "Ingrese el nombre del nuevo usuario: ";
+            std::string nombre;
+            std::cin >> nombre;
+
+            std::cout << "Ingrese la contrasena del nuevo usuario: ";
+            std::string password;
+            std::cin >> password;
+
+            int opt;
+            std::cout << "Ingrese 1 para cuenta de administrador. Ingrese 2 para cuenta de usuario: ";
+            std::cin >> opt;
+
+            bool esAdmin = (opt == 1); // Versión simplificada del if
+
+            auth.agregarUsuario(nombre, password, esAdmin);
+
+            break;
+        }
+        case 7:
+              auth.mostrarUsuarios();
             break;
         case 0:
             std::cout << "Volviendo al menú principal...\n";
